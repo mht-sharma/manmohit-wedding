@@ -96,7 +96,8 @@
   /* Hashtag row */
   .hashtag-wrap{
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem
   }
   .hashtag{
     margin: 0;
@@ -320,9 +321,10 @@
     text-align: center;
   }
   .venue-address{
-    margin: 0.35rem 0 0.85rem;
-    color: var(--text-secondary);
+    margin: 0.5rem 0 1rem;
+    color: var(--text-primary);
     font-size: 0.95rem;
+    font-weight: 500;
   }
   .map-wrapper{
     width: 100%;
@@ -426,4 +428,38 @@
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
+  }
+
+  .venue-title{
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.6rem 0 0.4rem;
+    color: var(--text-primary);
+  }
+
+  .venue-title::after{
+    content: "";
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: rgba(59,42,35,0.15);
+    margin: 8px auto 0;
+    border-radius: 1px;
+  }
+
+  .closing-hashtag{
+    margin-top: 0.6rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .closing-hashtag a{
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border-bottom: 1px dotted rgba(59,42,35,0.18);
+    padding-bottom: 2px;
   }
