@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+  <!-- Transparent background, simple Instagram glyph (rounded square with circle and small dot) -->
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#3B2A23" stroke-width="1.4" fill="none" />
+  <circle cx="12" cy="12" r="3.2" stroke="#3B2A23" stroke-width="1.4" fill="none" />
+  <circle cx="17.2" cy="6.8" r="0.6" fill="#3B2A23" />
+</svg>

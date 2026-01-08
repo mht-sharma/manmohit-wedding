@@ -1,0 +1,429 @@
+/* styles.css
+  /* styles.css
+     Clean, minimal, mobile-first styles for a premium wedding microsite.
+     Place this file in the same folder as index.html for GitHub Pages.
+  */
+
+  /* Color palette */
+  :root{
+    --bg: #FBF6EE;             /* warm ivory */
+    --text-primary: #3B2A23;   /* deep warm brown */
+    --text-secondary: #7D6B61; /* muted brown-grey */
+    --accent: #6C4F45;         /* soft warm accent for buttons */
+    --max-width: 760px;
+  }
+
+  /* Base reset & typography */
+  * { box-sizing: border-box; }
+  html,body { height: 100%; }
+  body{
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.45;
+  font-size: 16px;
+  padding: 18px 16px; /* reduce top padding so hero sits closer to viewport top */
+  display: flex;
+  justify-content: center;
+  }
+
+  /* Page container with comfortable max-width and white space */
+  .page{
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* HERO */
+  .hero{
+    text-align: center;
+    padding-top: 4vh; /* tighten top spacing */
+    padding-bottom: 0.8rem; /* tighten bottom spacing */
+  }
+
+  /* subtle divider under hero to separate intro from actions */
+  .hero::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: rgba(59,42,35,0.08);
+    margin: 10px auto 8px; /* space between hero and actions */
+    border-radius: 1px;
+  }
+
+  /* Couple name uses elegant serif font */
+  .couple{
+    margin: 0;
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    font-size: 2.1rem;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+  }
+
+  /* Subtitle/date/location */
+  .subtitle{
+    margin: 0.6rem 0 0;
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: 0.06em;
+  }
+
+  .date, .location{
+    margin: 0.35rem 0 0;
+    color: var(--text-primary);
+    font-weight: 400;
+    font-size: 0.98rem;
+  }
+
+  /* Actions / buttons - stacked on mobile */
+  .actions{
+    margin: 0.25rem 0; /* further tighten spacing below hero */
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem; /* slightly smaller gap between buttons */
+    align-items: stretch;
+    padding: 0 0.25rem;
+  }
+
+  /* Hashtag row */
+  .hashtag-wrap{
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .hashtag{
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+  .hashtag a{
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(59,42,35,0.12);
+    padding-bottom: 2px;
+  }
+
+  /* Button base */
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: none; /* no animations */
+    font-size: 1rem;
+  min-height: 44px;
+    letter-spacing: 0.02em;
+    border: 1px solid transparent;
+  }
+  .btn-invite{ max-width: 720px; width: 90%; margin: 0 auto; }
+  .btn .emoji{ margin-right: 8px; font-size: 1.05em; line-height: 1; }
+  .btn .icon{ width: 18px; height: 18px; margin-right: 10px; display: inline-block; vertical-align: middle; }
+
+  /* Instagram button group */
+  .insta-group{ display:flex; gap:0.6rem; flex-wrap:wrap; justify-content:center; }
+  .insta-group .btn{ display:inline-flex; align-items:center; }
+  /* color the bride/groom icons differently */
+  .icon-bride{ color: #C85A9B; /* soft rose */ }
+  .icon-groom{ color: #2E74A9; /* soft navy */ }
+
+  @media (min-width: 720px){
+    .insta-group{ flex-wrap:nowrap; }
+  }
+
+  /* Primary filled (soft) */
+  .btn-primary{
+    background: var(--accent);
+    color: #FBF6EE; /* ivory text on accent */
+    border-color: rgba(0,0,0,0.06);
+    box-shadow: none;
+  }
+
+  /* Outlined variant */
+  .btn-outline{
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(59,42,35,0.13);
+  }
+
+  /* Accessibility: focus outlines for keyboard users */
+  .btn:focus{
+    outline: 3px solid rgba(108,79,69,0.18);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  /* Schedule section */
+  .schedule{
+    padding: 1.25rem 0 2rem;
+    color: var(--text-primary);
+    text-align: center; /* center the whole schedule block */
+  }
+
+  .schedule h2{
+    margin: 0 0 0.9rem 0;
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .schedule h2::after{
+    /* subtle refined divider under heading */
+    content: "";
+    display: block;
+    width: 56px;
+    height: 1px;
+    background: rgba(59,42,35,0.12);
+    margin: 10px auto 0;
+    border-radius: 1px;
+  }
+
+  /* Day articles: centered container with subtle separators */
+  .day{
+    margin: 1rem auto;
+    padding: 1rem 0;
+    max-width: 560px;
+  }
+  .day + .day{
+    border-top: 1px solid rgba(59,42,35,0.06);
+  }
+
+  .day h3{
+    margin: 0 0 0.45rem 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .day ul{
+    margin: 0;
+    padding: 0;
+    color: var(--text-secondary);
+    list-style: none; /* remove bullets */
+  }
+
+  .day li{
+    margin: 0.45rem 0;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center; /* center list items */
+  }
+
+  /* Gallery (CSS-only horizontal swipe) */
+  .gallery{
+    margin: 1.5rem 0;
+  }
+  .carousel-wrap{
+    position: relative;
+  }
+  .gallery-title{
+    font-family: "Playfair Display", serif;
+    font-size: 1.05rem;
+    margin: 0 0 0.6rem 0;
+    color: var(--text-primary);
+  }
+
+  .carousel{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 0.65rem;
+  padding-bottom: 8px;
+  /* small padding so first/last items can center on snap */
+  padding-left: 8%;
+  padding-right: 8%;
+  position: relative; /* allow absolute-positioned controls */
+  }
+  .carousel::-webkit-scrollbar{ display: none; }
+
+  .carousel-controls{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: block;
+    align-items: center;
+    padding: 0;
+    z-index: 6;
+    pointer-events: none; /* let buttons opt-in */
+  }
+  .carousel-btn{
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(59,42,35,0.08);
+    color: var(--text-primary);
+    padding: 14px 16px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(59,42,35,0.06);
+    pointer-events: auto; /* enable clicks */
+  }
+  .carousel-btn svg{ display: block; }
+  .carousel-btn svg{ width: 20px; height: 32px; }
+  .carousel-prev{ position: absolute; left: 6%; top: 50%; transform: translateY(-50%); }
+  .carousel-next{ position: absolute; right: 6%; top: 50%; transform: translateY(-50%); }
+  .carousel-btn:focus{ outline: 3px solid rgba(108,79,69,0.14); }
+
+  @media (min-width: 720px){
+  /* keep overlay controls but slightly larger on wider screens */
+  .carousel-controls{ padding: 0 10%; }
+  .carousel-btn{ padding: 12px 14px; }
+  }
+
+  .item{
+    flex: 0 0 100%; /* one image fully visible on mobile */
+    scroll-snap-align: center; /* center-snap for clearer single-image view */
+    border-radius: 10px;
+    overflow: hidden;
+    /* enforce consistent visual area regardless of source image dimensions */
+    aspect-ratio: 16 / 9;
+    background: rgba(0,0,0,0.03);
+  }
+  .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* center-crop without distortion */
+    display: block;
+  }
+
+  @media (min-width: 720px){
+    /* Desktop / tablet: show a single prominent image, centered */
+    .carousel{ padding-left: 10%; padding-right: 10%; gap: 1rem; }
+    .item{ flex: 0 0 80%; }
+    .item img{ height: auto; }
+  }
+
+  @media (min-width: 1000px){
+    /* Larger screens: slightly narrower item so there's a hint of next image */
+    .carousel{ padding-left: 18%; padding-right: 18%; }
+    .item{ flex: 0 0 60%; }
+  }
+
+  /* Venue & map styles */
+  .venue{
+    margin: 0.5rem 0 1.5rem;
+    text-align: center;
+  }
+  .venue-address{
+    margin: 0.35rem 0 0.85rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+  .map-wrapper{
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  .map-wrapper{ margin-top: 10px; box-shadow: 0 8px 22px rgba(59,42,35,0.04); }
+  .map-wrapper iframe{
+    width: 100%;
+    height: 320px;
+    border: 0;
+    display: block;
+  }
+
+  .map-actions{
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .btn-map{
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 7px;
+    max-width: 320px;
+  }
+
+  @media (min-width: 720px){
+    .map-wrapper iframe{
+      height: 420px;
+    }
+  }
+
+  /* Closing note */
+  .closing{
+    margin: 2rem 0 2.6rem;
+    text-align: center;
+  }
+
+  .closing-note{
+    margin: 0 0 0.65rem;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+  }
+
+  .signature{
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+  }
+
+  /* Footer */
+  .site-footer{
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    padding-bottom: 3.5vh;
+  }
+
+  /* Responsive adjustments for larger screens */
+  @media (min-width: 720px){
+    body{ padding: 28px 20px; }
+    /* reduce hero vertical space on larger screens so actions appear closer */
+    .hero{ padding-top: 6vh; padding-bottom: 1rem; }
+    .couple{ font-size: 2.6rem; }
+    .subtitle{ font-size: 1.05rem; }
+    .date, .location{ font-size: 1rem; }
+
+    /* For larger screens, center the button stack and limit each button width */
+    .actions{
+      align-items: center;
+      gap: 1rem;
+      padding: 0;
+    }
+    .btn{
+      width: 100%;
+      max-width: 420px; /* medium width on desktop */
+    }
+  }
+
+  /* Print-friendly (very minimal) */
+  @media print{
+    body{ background: white; color: black; }
+    .btn{ display: none; }
+  }
+
+  @media print{
+    body{ background: white; color: black; }
+    .btn{ display: none; }
+  }
+
+  /* Accessibility helper: visually hidden but available to screen readers */
+  .visually-hidden{
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
